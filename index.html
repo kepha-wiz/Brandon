@@ -436,4 +436,168 @@
                         <a href="#" style="color: var(--primary); font-weight: bold;">Read More &rarr;</a>
                     </div>
                 </article>
-                <article class="blog-
+                <article class="blog-card">
+                    <img src="https://picsum.photos/seed/news2/400/250.jpg" alt="News 2">
+                    <div class="blog-content">
+                        <span class="blog-date">Sept 02, 2023</span>
+                        <h4 class="blog-title">New Scholarships Awarded</h4>
+                        <a href="#" style="color: var(--primary); font-weight: bold;">Read More &rarr;</a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <img src="https://picsum.photos/seed/news3/400/250.jpg" alt="News 3">
+                    <div class="blog-content">
+                        <span class="blog-date">Aug 10, 2023</span>
+                        <h4 class="blog-title">Women's Tailoring Workshop Graduation</h4>
+                        <a href="#" style="color: var(--primary); font-weight: bold;">Read More &rarr;</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding get-involved" id="get-involved">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-subtitle">Join The Movement</span>
+                <h2 class="section-title" style="color: white;">Get Involved</h2>
+            </div>
+            <div class="involve-content">
+                <div class="donate-options">
+                    <h3><i class="fa-solid fa-hand-holding-heart"></i> Make a Donation</h3>
+                    <a href="#" class="payment-btn"><i class="fa-brands fa-paypal" style="color: #003087;"></i> Donate with PayPal</a>
+                    <a href="#" class="payment-btn"><i class="fa-brands fa-cc-stripe" style="color: #635bff;"></i> Donate with Card</a>
+                    <div style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 5px; text-align: center;">
+                        <p style="color: #ddd; font-size: 0.9rem;">Mobile Money (Uganda)</p>
+                        <p style="font-weight: bold; color: var(--accent); font-size: 1.2rem;">MTN / Airtel: 0743066622</p>
+                    </div>
+                </div>
+                <div class="volunteer-box">
+                    <h3><i class="fa-solid fa-users"></i> Volunteer With Us</h3>
+                    <form onsubmit="event.preventDefault(); alert('Thank you for signing up!');">
+                        <input type="text" placeholder="Your Name" style="width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 4px; border:none;">
+                        <input type="email" placeholder="Your Email" style="width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 4px; border:none;">
+                        <button type="submit" class="btn btn-secondary" style="width: 100%;">Sign Up</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding contact" id="contact">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-subtitle">Get in Touch</span>
+                <h2 class="section-title">Contact Us</h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-details">
+                    <div class="contact-info-item"><i class="fa-solid fa-location-dot"></i><div><h4>Address</h4><p>Walukuba, Menya Road<br>Jinja, Uganda</p></div></div>
+                    <div class="contact-info-item"><i class="fa-solid fa-phone"></i><div><h4>Phone</h4><p>+256 743 066 622</p></div></div>
+                    <div class="contact-info-item"><i class="fa-solid fa-envelope"></i><div><h4>Email</h4><p>info@mugabicharity.org</p></div></div>
+                </div>
+                <div class="contact-form">
+                    <form onsubmit="event.preventDefault(); alert('Message sent!');">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <textarea placeholder="Write your message here..." required></textarea>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="dev-credit">
+        <div class="container">
+            <p>Need a professional website for your business or organization?</p>
+            <div class="cks-brand">Developed by CKS-Tech</div>
+            <a href="https://wa.me/256755261254" target="_blank" class="whatsapp-link">
+                <i class="fa-brands fa-whatsapp"></i> Request a Website
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Mugabi Charity Foundation</h4>
+                    <p>Empowering communities through sustainable programs.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <a href="#about">About Us</a>
+                    <a href="#programs">Our Programs</a>
+                    <a href="#transparency">Transparency</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">TikTok</a>
+                </div>
+            </div>
+            <div class="copyright">&copy; 2023 Mugabi Charity Foundation. All Rights Reserved.</div>
+        </div>
+    </footer>
+
+    <!-- Explicit JS Scroll Handler -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // 1. FIX: Force Smooth Scrolling for all links starting with #
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        // Scroll to element accounting for header height
+                        const headerOffset = 90;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: "smooth"
+                        });
+                        
+                        // Close mobile menu if open
+                        closeMenu();
+                    }
+                });
+            });
+
+            // 2. Mobile Menu Logic
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.getElementById('navLinks');
+            const icon = hamburger.querySelector('i');
+
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                
+                if (navLinks.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-xmark');
+                } else {
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                }
+            });
+
+            function closeMenu() {
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
